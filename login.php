@@ -22,7 +22,7 @@ if ($salt && $hash) {
         // 返回 session_id
         $data = array('success' => true, 'url' => $name ? 'resume-preview.php' : 'resume-edit.php');
     } else {
-        $data = array('success' => false, 'errMsg' => '登录失败，请稍后重试');
+        $data = array('success' => false, 'errMsg' => '用户名或密码有误');
     }
 } else {
     $data = array('success' => false, 'errMsg' => '用户不存在，请先注册');
