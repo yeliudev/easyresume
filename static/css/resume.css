@@ -1,0 +1,221 @@
+/*! Created by Ye Liu */
+
+body {
+    background-color: #2f9cf5;
+    padding: 40px 0 100px;
+}
+
+input {
+    outline: none;
+}
+
+.resume {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+    position: relative;
+    box-shadow: 1px 1px 18px #515151;
+    z-index: 50;
+}
+
+.help {
+    display: none;
+}
+
+.help.display {
+    display: inline !important;
+}
+
+.table {
+    width: 100%;
+    background-color: whitesmoke !important;
+    margin: auto;
+}
+
+.is-grey {
+    color: #999999;
+}
+
+.is-dark-grey {
+    color: #707070;
+}
+
+.is-rtl {
+    direction: rtl;
+}
+
+.is-ltr {
+    direction: ltr;
+}
+
+.control.has-indent {
+    margin-left: 16px;
+}
+
+.control.is-radio {
+    position: relative;
+    bottom: -4px;
+}
+
+.is-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.is-edit {
+    padding: 35px 20px 0 55px;
+}
+
+.is-preview {
+    padding: 35px 35px 0 40px;
+}
+
+.radio-icon {
+    position: relative;
+    top: -1px;
+    margin-right: 8px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    margin: 24px auto;
+}
+
+.line {
+    background-color: #d1d1d1;
+    height: 1px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.is-table {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #a1a1a1;
+    margin: 20px 0;
+}
+
+.is-align-top {
+    position: relative;
+    top: -7px;
+}
+
+.is-align-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.is-align-right {
+    text-align: right;
+}
+
+input[type=range], progress {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 50px;
+    display: block;
+    width: 100%;
+    height: 1rem;
+    position: relative;
+    bottom: -4px;
+}
+
+.is-gap {
+    margin-top: 20px;
+}
+
+.progress.is-cpp::-webkit-progress-value {
+    background-color: #ecd078b3;
+}
+
+.progress.is-cpp::-moz-progress-bar {
+    background-color: #ecd078b3;
+}
+
+.progress.is-cpp::-ms-fill {
+    background-color: #ecd078b3;
+}
+
+.progress.is-py::-webkit-progress-value {
+    background-color: #d95b43b3;
+}
+
+.progress.is-py::-moz-progress-bar {
+    background-color: #d95b43b3;
+}
+
+.progress.is-py::-ms-fill {
+    background-color: #d95b43b3;
+}
+
+.progress.is-java::-webkit-progress-value {
+    background-color: #c02942b3;
+}
+
+.progress.is-java::-moz-progress-bar {
+    background-color: #c02942b3;
+}
+
+.progress.is-java::-ms-fill {
+    background-color: #c02942b3;
+}
+
+.progress.is-cs::-webkit-progress-value {
+    background-color: #542437b3;
+}
+
+.progress.is-cs::-moz-progress-bar {
+    background-color: #542437b3;
+}
+
+.progress.is-cs::-ms-fill {
+    background-color: #542437b3;
+}
+
+.progress.is-git::-webkit-progress-value {
+    background-color: #53777ab3;
+}
+
+.progress.is-git::-moz-progress-bar {
+    background-color: #53777ab3;
+}
+
+.progress.is-git::-ms-fill {
+    background-color: #53777ab3;
+}
+
+.progress.is-latax::-webkit-progress-value {
+    background-color: #7792aeb3;
+}
+
+.progress.is-latax::-moz-progress-bar {
+    background-color: #7792aeb3;
+}
+
+.progress.is-latax::-ms-fill {
+    background-color: #7792aeb3;
+}
+
+.column.is-tight {
+    padding: 0.5rem 0;
+}
+
+.message.is-bottom-right {
+    display: none;
+    position: fixed;
+    height: 134px;
+    width: 300px;
+    right: 25px;
+    bottom: 5px;
+    z-index: 100;
+}
+
+.message.display {
+    display: block !important;
+}

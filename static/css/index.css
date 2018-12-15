@@ -1,0 +1,141 @@
+/*! Created by Ye Liu */
+
+body {
+  height: 100vh;
+  background-color: #2f9cf5;
+  color: white;
+  font-weight: 300;
+}
+
+body ::-webkit-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+body :-moz-placeholder {
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+
+body ::-moz-placeholder {
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+
+body :-ms-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  margin-top: -200px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container.form-success .welcome {
+  -webkit-transform: translateY(85px);
+  transform: translateY(85px);
+}
+
+.welcome {
+  font-size: 40px;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  font-weight: 200;
+}
+
+form {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+form input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: #2f9cf5;
+}
+
+.login-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #2f9cf5;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+  transition-duration: 0.75s;
+  transition-timing-function: ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #f5f7f9;
+}
+
+.login-button.is-register {
+  -webkit-transform: translateY(15px);
+  transform: translateY(15px);
+}
+
+.register-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  margin: 10px auto;
+  outline: 0;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.error-label {
+  display: block;
+  margin: 10px auto;
+  color: white;
+  font-size: 14px;
+  font-weight: 420;
+}
+
+.is-invisible {
+  display: none !important;
+}

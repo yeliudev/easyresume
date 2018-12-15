@@ -1,0 +1,47 @@
+/*! Created by Ye Liu */
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.chart-label {
+    width: 55px;
+}
+
+.label-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    bottom: -1px;
+}
+
+.label-text {
+    font-size: 12px;
+}
+
+.cpp-slider {
+    background-color: #ecd078b3;
+}
+
+.py-slider {
+    background-color: #d95b43b3;
+}
+
+.java-slider {
+    background-color: #c02942b3;
+}
+
+.cs-slider {
+    background-color: #542437b3;
+}
+
+.git-slider {
+    background-color: #53777ab3;
+}
+
+.latax-slider {
+    background-color: #7792aeb3;
+}

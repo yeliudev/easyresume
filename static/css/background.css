@@ -1,0 +1,13 @@
+/*! Created by Ye Liu */
+
+body {
+    overflow: hidden;
+}
+
+.bubble {
+    transform-origin: center;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    position: fixed;
+}
