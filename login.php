@@ -12,6 +12,9 @@ $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
 
+// 断开数据库连接
+$conn->close();
+
 if ($salt && $hash) {
     // 计算哈希值
     if ($hash == md5($_POST['password'] . $salt)) {

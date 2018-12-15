@@ -28,6 +28,9 @@ $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
 
+// 断开数据库连接
+$conn->close();
+
 // 解析 json 字符串
 $awards = $awards ? json_decode($awards, true) : false;
 $jobs = $jobs ? json_decode($jobs, true) : false;

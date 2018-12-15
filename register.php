@@ -36,6 +36,8 @@ if ($hasRow) {
     $sql_stmt->bind_param('sss', $_POST['username'], $salt, $hash);
     $sql_success = $sql_stmt->execute();
     $sql_stmt->close();
+
+    // 断开数据库连接
     $conn->close();
 
     if ($sql_success) {

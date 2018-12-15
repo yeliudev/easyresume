@@ -28,9 +28,11 @@ $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
 
+// 断开数据库连接
+$conn->close();
+
 if (!$name) {
     echo "<script>alert('请先填写简历内容！');window.location.href='resume-edit.php';</script>";
-    $conn->close();
     exit();
 }
 
