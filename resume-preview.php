@@ -1,10 +1,10 @@
 <?php
-include './static/php/session.php';
+include './php/session.php';
 
 header('content-type:text/html; charset=utf8');
 
 // 连接数据库
-include './static/php/mysql.php';
+include './php/mysql.php';
 
 // 查询用户是否存在
 $sql_stmt = $conn->prepare(SQL_CHECK);
@@ -41,6 +41,8 @@ $jobs = $jobs ? json_decode($jobs, true) : false;
 // 格式化时间
 $birthdate = date('Y-m-d', strtotime($birthdate));
 ?>
+
+<!-- Created by Ye Liu -->
 
 <!DOCTYPE html>
 <html>
@@ -233,7 +235,7 @@ switch ($education) {
             </div>
 
 <?php if (!empty($awards)) {
-    include './static/php/awards-preview.php';
+    include './php/awards-preview.php';
     appendAwards($awards);
 } ?>
 
@@ -299,7 +301,7 @@ echo ' 元人民币'; ?>" readonly>
             </div>
 
 <?php if (!empty($jobs)) {
-    include './static/php/jobs-preview.php';
+    include './php/jobs-preview.php';
     appendJobs($jobs);
 } ?>
 
@@ -376,8 +378,8 @@ echo ' 元人民币'; ?>" readonly>
     </section>
 </body>
 
-<script src="./static/js/background.js"></script>
-<script src="./static/js/template.js"></script>
-<script src="./static/js/resume.js"></script>
+<script src="./static/lib/background.js"></script>
+<script src="./static/lib/template.js"></script>
+<script src="./static/lib/resume.js"></script>
 
 </html>

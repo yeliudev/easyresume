@@ -1,10 +1,10 @@
 <?php
-include './static/php/session.php';
+include './php/session.php';
 
 header('content-type:text/html; charset=utf8');
 
 // 连接数据库
-include './static/php/mysql.php';
+include './php/mysql.php';
 
 // 查询用户是否存在
 $sql_stmt = $conn->prepare(SQL_CHECK);
@@ -36,6 +36,8 @@ $jobs = $jobs ? json_decode($jobs, true) : false;
 $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
 ?>
 
+<!-- Created by Ye Liu -->
+
 <!DOCTYPE html>
 <html>
 
@@ -51,7 +53,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
     <link rel="stylesheet" href="./static/css/chart.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.transit/0.9.12/jquery.transit.min.js"></script>
-    <script src="./static/js/verification.js"></script>
+    <script src="./static/lib/verification.js"></script>
 </head>
 
 <body>
@@ -268,7 +270,7 @@ if ($avatarUrl) {
             </div>
 
 <?php if (!empty($awards)) {
-    include './static/php/awards-edit.php';
+    include './php/awards-edit.php';
     appendAwards($awards);
 } ?>
 
@@ -327,7 +329,7 @@ if ($avatarUrl) {
             </div>
 
 <?php if (!empty($jobs)) {
-    include './static/php/jobs-edit.php';
+    include './php/jobs-edit.php';
     appendJobs($jobs);
 } ?>
 
@@ -417,8 +419,8 @@ if ($name) {
     </article>
 </body>
 
-<script src="./static/js/background.js"></script>
-<script src="./static/js/template.js"></script>
-<script src="./static/js/resume.js"></script>
+<script src="./static/lib/background.js"></script>
+<script src="./static/lib/template.js"></script>
+<script src="./static/lib/resume.js"></script>
 
 </html>

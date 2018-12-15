@@ -1,3 +1,5 @@
+/*! Created by Ye Liu */
+
 'use strict'
 
 var awardTableTemplate = '<div id="award-table" class="column is-10 is-offset-1 is-table"></div>',

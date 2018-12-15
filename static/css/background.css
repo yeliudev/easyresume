@@ -5,9 +5,9 @@ body {
 }
 
 .bubble {
-    transform-origin: center;
     width: 80px;
     height: 80px;
-    background: #ffffff;
     position: fixed;
+    background: #ffffff;
+    transform-origin: center;
 }

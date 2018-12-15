@@ -1,6 +1,6 @@
 <?php
-include './static/php/session.php';
-include './static/php/verification.php';
+include './php/session.php';
+include './php/verification.php';
 
 date_default_timezone_set("Asia/Shanghai");
 header('Content-Type:application/json; charset=utf-8');
@@ -9,7 +9,7 @@ header('Content-Type:application/json; charset=utf-8');
 $avatarUrl = $_FILES && !$_FILES['avatar']['error'] && move_uploaded_file($_FILES['avatar']['tmp_name'], './static/upload/' . $_SESSION['username'] . '.png') ? './static/upload/' . $_SESSION['username'] . '.png' : false;
 
 // 连接数据库
-include './static/php/mysql.php';
+include './php/mysql.php';
 
 // 查询用户是否存在
 $sql_stmt = $conn->prepare(SQL_CHECK);

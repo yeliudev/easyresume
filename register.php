@@ -14,7 +14,7 @@ function getSalt()
 }
 
 // 连接数据库
-include './static/php/mysql.php';
+include './php/mysql.php';
 
 // 查询用户是否存在
 $sql_stmt = $conn->prepare(SQL_CHECK);
