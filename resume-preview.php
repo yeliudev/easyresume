@@ -360,7 +360,7 @@ echo ' 元人民币'; ?>" readonly>
             <div class="field">
                 <label class="label">个人陈述</label>
                 <div class="control">
-                    <textarea class="input is-static is-dark-grey" readonly><?php echo $remark ? $remark : '无'; ?></textarea>
+                    <textarea id="remark-preview" class="input is-static is-dark-grey" readonly><?php echo $remark ? $remark : '无'; ?></textarea>
                 </div>
             </div>
 

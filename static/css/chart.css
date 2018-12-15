@@ -23,25 +23,25 @@
 }
 
 .cpp-slider {
-    background-color: #ecd078b3;
+    background-color: rgba(236, 208, 120, 0.7);
 }
 
 .py-slider {
-    background-color: #d95b43b3;
+    background-color: rgba(217, 91, 67, 0.7);
 }
 
 .java-slider {
-    background-color: #c02942b3;
+    background-color: rgba(192, 41, 66, 0.7);
 }
 
 .cs-slider {
-    background-color: #542437b3;
+    background-color: rgba(84, 36, 55, 0.7);
 }
 
 .git-slider {
-    background-color: #53777ab3;
+    background-color: rgba(83, 119, 122, 0.7);
 }
 
 .latax-slider {
-    background-color: #7792aeb3;
+    background-color: rgba(119, 146, 174, 0.7);
 }

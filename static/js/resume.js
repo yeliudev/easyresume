@@ -1,6 +1,6 @@
 'use strict'
 
-const colors = ['#ecd078b3', '#d95b43b3', '#c02942b3', '#542437b3', '#53777ab3', '#7792aeb3']
+const colors = ['rgba(236, 208, 120, 0.7)', 'rgba(217, 91, 67, 0.7)', 'rgba(192, 41, 66, 0.7)', 'rgba(84, 36, 55, 0.7)', 'rgba(83, 119, 122, 0.7)', 'rgba(119, 146, 174, 0.7)']
 
 function drawChart() {
     var canvas = document.getElementById('chart'),
@@ -16,7 +16,7 @@ function drawChart() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     for (var i = 0; i < 6; i++) {
-        var start = i == 0 ? 0 : i * (plotBase - canvas.width / 15),
+        var start = i * (plotBase - canvas.width / 15),
             peakPoint = canvas.height - Math.round(canvas.height * (data[i] / Math.max.apply(Math, data)))
 
         ctx.fillStyle = colors[i]
@@ -73,6 +73,13 @@ function encodeTable() {
         document.getElementsByName('job-to-time')[i].id = 'jobs[' + i.toString() + '][to]'
         document.getElementsByName('job-company')[i].id = 'jobs[' + i.toString() + '][company]'
         document.getElementsByName('job-title')[i].id = 'jobs[' + i.toString() + '][title]'
+    }
+}
+
+function remarktAdaptaion() {
+    var remarkPreview = document.getElementById('remark-preview')
+    if (remarkPreview && remarkPreview.scrollHeight) {
+        remarkPreview.style.height = remarkPreview.scrollHeight + 10 + 'px'
     }
 }
 
@@ -273,4 +280,5 @@ function onLogoutClick() {
 }
 
 drawChart()
+remarktAdaptaion()
 encodeTable()

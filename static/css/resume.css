@@ -131,75 +131,75 @@ input[type=range], progress {
 }
 
 .progress.is-cpp::-webkit-progress-value {
-    background-color: #ecd078b3;
+    background-color: rgba(236, 208, 120, 0.7);
 }
 
 .progress.is-cpp::-moz-progress-bar {
-    background-color: #ecd078b3;
+    background-color: rgba(236, 208, 120, 0.7);
 }
 
 .progress.is-cpp::-ms-fill {
-    background-color: #ecd078b3;
+    background-color: rgba(236, 208, 120, 0.7);
 }
 
 .progress.is-py::-webkit-progress-value {
-    background-color: #d95b43b3;
+    background-color: rgba(217, 91, 67, 0.7);
 }
 
 .progress.is-py::-moz-progress-bar {
-    background-color: #d95b43b3;
+    background-color: rgba(217, 91, 67, 0.7);
 }
 
 .progress.is-py::-ms-fill {
-    background-color: #d95b43b3;
+    background-color: rgba(217, 91, 67, 0.7);
 }
 
 .progress.is-java::-webkit-progress-value {
-    background-color: #c02942b3;
+    background-color: rgba(192, 41, 66, 0.7);
 }
 
 .progress.is-java::-moz-progress-bar {
-    background-color: #c02942b3;
+    background-color: rgba(192, 41, 66, 0.7);
 }
 
 .progress.is-java::-ms-fill {
-    background-color: #c02942b3;
+    background-color: rgba(192, 41, 66, 0.7);
 }
 
 .progress.is-cs::-webkit-progress-value {
-    background-color: #542437b3;
+    background-color: rgba(84, 36, 55, 0.7);
 }
 
 .progress.is-cs::-moz-progress-bar {
-    background-color: #542437b3;
+    background-color: rgba(84, 36, 55, 0.7);
 }
 
 .progress.is-cs::-ms-fill {
-    background-color: #542437b3;
+    background-color: rgba(84, 36, 55, 0.7);
 }
 
 .progress.is-git::-webkit-progress-value {
-    background-color: #53777ab3;
+    background-color: rgba(83, 119, 122, 0.7);
 }
 
 .progress.is-git::-moz-progress-bar {
-    background-color: #53777ab3;
+    background-color: rgba(83, 119, 122, 0.7);
 }
 
 .progress.is-git::-ms-fill {
-    background-color: #53777ab3;
+    background-color: rgba(83, 119, 122, 0.7);
 }
 
 .progress.is-latax::-webkit-progress-value {
-    background-color: #7792aeb3;
+    background-color: rgba(119, 146, 174, 0.7);
 }
 
 .progress.is-latax::-moz-progress-bar {
-    background-color: #7792aeb3;
+    background-color: rgba(119, 146, 174, 0.7);
 }
 
 .progress.is-latax::-ms-fill {
-    background-color: #7792aeb3;
+    background-color: rgba(119, 146, 174, 0.7);
 }
 
 .column.is-tight {
