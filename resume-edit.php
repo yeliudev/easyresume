@@ -23,7 +23,7 @@ if (!$hasRow) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $education, $school, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $remark, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $education, $school, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -388,8 +388,8 @@ if ($avatarUrl) {
             <div class="field">
                 <label class="label">个人陈述</label>
                 <div class="control">
-                    <textarea id="remark" class="textarea" name="remark" placeholder="对简历内容的补充说明" data-valid="256 isNotEmpty isNormalStr" onblur="onVarify(this)"><?php echo $remark; ?></textarea>
-                    <p id="remark-warning" class="help is-danger">不是有效的个人陈述</p>
+                    <textarea id="statement" class="textarea" name="statement" placeholder="对简历内容的补充说明" data-valid="256 isNotEmpty isNormalStr" onblur="onVarify(this)"><?php echo $statement; ?></textarea>
+                    <p id="statement-warning" class="help is-danger">不是有效的个人陈述</p>
                 </div>
             </div>
 

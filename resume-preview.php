@@ -23,7 +23,7 @@ if (!$hasRow) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $education, $school, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $remark, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $education, $school, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -360,7 +360,7 @@ echo ' 元人民币'; ?>" readonly>
             <div class="field">
                 <label class="label">个人陈述</label>
                 <div class="control">
-                    <textarea id="remark-preview" class="input is-static is-dark-grey" readonly><?php echo $remark ? $remark : '无'; ?></textarea>
+                    <textarea id="statement-preview" class="input is-static is-dark-grey" readonly><?php echo $statement ? $statement : '无'; ?></textarea>
                 </div>
             </div>
 

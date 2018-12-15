@@ -24,7 +24,7 @@ function varify($data)
         'cs-ability' => '/^[0-9]{1,3}$/u',
         'git-ability' => '/^[0-9]{1,3}$/u',
         'latax-ability' => '/^[0-9]{1,3}$/u',
-        'remark' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\'":;\s\[\]\{\}\-\(\),.]{0,256}$/u');
+        'statement' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\'":;\s\[\]\{\}\-\(\),.]{0,256}$/u');
 
     foreach ($regs as $reg) {
         if (!preg_match($reg, $data[array_keys($regs, $reg, true)[0]])) {

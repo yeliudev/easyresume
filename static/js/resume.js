@@ -77,7 +77,7 @@ function encodeTable() {
 }
 
 function remarktAdaptaion() {
-    var remarkPreview = document.getElementById('remark-preview')
+    var remarkPreview = document.getElementById('statement-preview')
     if (remarkPreview && remarkPreview.scrollHeight) {
         remarkPreview.style.height = remarkPreview.scrollHeight + 10 + 'px'
     }

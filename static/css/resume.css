@@ -5,17 +5,17 @@ body {
     padding: 40px 0 100px;
 }
 
-input {
-    outline: none;
-}
-
-.resume {
+form {
     background-color: whitesmoke;
     border-radius: 5px;
     padding: 1.25rem 2.5rem 1.25rem 1.5rem;
     position: relative;
     box-shadow: 1px 1px 18px #515151;
     z-index: 50;
+}
+
+input {
+    outline: none;
 }
 
 .help {
@@ -68,7 +68,7 @@ input {
 }
 
 .is-preview {
-    padding: 35px 35px 0 40px;
+    padding: 35px 37px 0 37px;
 }
 
 .radio-icon {
