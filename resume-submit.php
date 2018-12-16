@@ -16,7 +16,7 @@ $avatarUrl = $_FILES && !$_FILES['avatar']['error'] && move_uploaded_file($_FILE
 include './php/mysql.php';
 
 // 检查用户是否存在
-if (!hasUser($_SESSION['username'])) {
+if (!hasUser($conn, $_SESSION['username'])) {
     header('content-type:text/html; charset=utf8');
     echo "<script>alert('用户不存在，请先登录！');window.location.href='index.html';</script>";
     $conn->close();

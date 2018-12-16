@@ -25,7 +25,7 @@ if (!varify($_POST, $regListUser)) {
 include './php/mysql.php';
 
 // 检查用户是否存在
-if (hasUser($_POST['username'])) {
+if (hasUser($conn, $_POST['username'])) {
     $data = array('success' => false, 'errMsg' => '用户已存在，请直接登录');
     exit(json_encode($data));
 }

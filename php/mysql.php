@@ -11,7 +11,7 @@ define('SQL_UPDATE_ALL', "UPDATE user SET name=?,sex=?,avatarUrl=?,birthdate=FRO
 define('SQL_UPDATE', "UPDATE user SET name=?,sex=?,birthdate=FROM_UNIXTIME(?),birthplace=?,cellphone=?,email=?,residence=?,address=?,education=?,school=?,major=?,awards=?,work_time=?,job_status=?,salary_type=?,salary=?,jobs=?,cpp_ability=?,py_ability=?,java_ability=?,cs_ability=?,git_ability=?,latax_ability=?,statement=?,last_modify=FROM_UNIXTIME(?) WHERE username=?");
 define('SQL_INSERT_USER', "INSERT user (username,salt,password) VALUES (?,?,?)");
 
-function hasUser($username)
+function hasUser($conn, $username)
 {
     $sql_stmt = $conn->prepare(SQL_CHECK);
     $sql_stmt->bind_param('s', $username);
