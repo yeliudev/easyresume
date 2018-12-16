@@ -6,15 +6,8 @@ header('content-type:text/html; charset=utf8');
 // 连接数据库
 include './php/mysql.php';
 
-// 查询用户是否存在
-$sql_stmt = $conn->prepare(SQL_CHECK);
-$sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($hasRow);
-$sql_stmt->execute();
-$sql_stmt->fetch();
-$sql_stmt->close();
-
-if (!$hasRow) {
+// 检查用户是否存在
+if (!hasUser($_SESSION['username'])) {
     echo "<script>alert('用户不存在，请先登录！');window.location.href='index.html';</script>";
     $conn->close();
     exit();
