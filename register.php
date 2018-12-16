@@ -17,7 +17,7 @@ function getSalt()
 include './php/verification.php';
 
 if (!varify($_POST, $regListUser)) {
-    $data = array('success' => false, 'errMsg' => '用户名或密码不合法，请检查是否有误');
+    $data = array('success' => false, 'errMsg' => '用户名或密码不合法');
     exit(json_encode($data));
 }
 

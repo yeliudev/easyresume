@@ -9,13 +9,13 @@ var checkService = {
 
     isUsername: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[a-zA-Z0-9._@]+$/
+        var reg = /^[\w.@]+$/
         return reg.test(val)
     },
 
     isPassword: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[a-zA-Z0-9._@<>\-\[\]\<\>]+$/
+        var reg = /^[\w.@\[\]\<\>\-]+$/
         return reg.test(val)
     },
 
@@ -33,13 +33,13 @@ var checkService = {
 
     isEmail: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[A-Za-z0-9]+@[A-Za-z0-9]+.[A-Za-z0-9.]*$/
+        var reg = /^[\w]+@[A-Za-z0-9]+.[A-Za-z0-9.]*$/
         return reg.test(val)
     },
 
     isNormalStr: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[a-zA-Z0-9\u0391-\uFFE5:;'"\s\-\(\)\[\]\{\},.]+$/
+        var reg = /^[\w\u0391-\uFFE5:;'"\s\-\(\)\[\]\{\},.]+$/
         return reg.test(val)
     },
 

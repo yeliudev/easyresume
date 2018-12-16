@@ -386,7 +386,7 @@ if ($avatarUrl) {
             <div class="field">
                 <label class="label">个人陈述</label>
                 <div class="control">
-                    <textarea id="statement" class="textarea" name="statement" placeholder="对简历内容的补充说明" data-valid="256 isNotEmpty isNormalStr" onblur="onVarify(this)"><?php echo $statement; ?></textarea>
+                    <textarea id="statement" class="textarea" name="statement" placeholder="对简历内容的补充说明" data-valid="256 isNormalStr" onblur="onVarify(this)"><?php echo $statement; ?></textarea>
                     <p id="statement-warning" class="help is-danger">不是有效的个人陈述</p>
                 </div>
             </div>
