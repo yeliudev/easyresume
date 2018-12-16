@@ -15,13 +15,13 @@ var checkService = {
 
     isPassword: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[a-zA-Z0-9._@<>\[\]]+$/
+        var reg = /^[a-zA-Z0-9._@<>\-\[\]\<\>]+$/
         return reg.test(val)
     },
 
     isName: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[A-Za-z\u4e00-\u9fa5 ·]+$/
+        var reg = /^[A-Za-z\u4e00-\u9fa5.\(\) ·]+$/
         return reg.test(val)
     },
 
@@ -39,7 +39,7 @@ var checkService = {
 
     isNormalStr: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[a-zA-Z0-9\u0391-\uFFE5:;'"\s\-\(\)\[\]\{\},]+$/
+        var reg = /^[a-zA-Z0-9\u0391-\uFFE5:;'"\s\-\(\)\[\]\{\},.]+$/
         return reg.test(val)
     },
 

@@ -3,9 +3,10 @@ include './php/session.php';
 include './php/verification.php';
 
 // 校验数据合法性
-if (!varify($_POST, $regList)) {
+if (!varify($_POST, $regListResume)) {
     header('Content-Type:application/json; charset=utf-8');
-    exit(json_encode(array('success' => false, 'errMsg' => '简历内容不合法，请检查是否有误')));
+    $data = array('success' => false, 'errMsg' => '简历内容不合法，请检查是否有误');
+    exit(json_encode($data));
 }
 
 // 保存用户照片

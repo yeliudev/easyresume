@@ -13,6 +13,14 @@ function getSalt()
     return $nounce;
 }
 
+// 校验数据合法性
+include './php/verification.php';
+
+if (!varify($_POST, $regListUser)) {
+    $data = array('success' => false, 'errMsg' => '用户名或密码不合法，请检查是否有误');
+    exit(json_encode($data));
+}
+
 // 连接数据库
 include './php/mysql.php';
 
