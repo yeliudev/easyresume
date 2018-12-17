@@ -1,8 +1,8 @@
 <?php
-$levelMap = array('0' => '校级', '1' => '市级', '2' => '省级', '3' => '国家级', '4' => '世界级');
-
 function appendAwards($awards)
 {
+    $levelMap = array('0' => '校级', '1' => '市级', '2' => '省级', '3' => '国家级', '4' => '世界级');
+
     echo '<div class="field">';
     echo '<label class="label">获奖经历</label>';
     echo '<div class="control">';

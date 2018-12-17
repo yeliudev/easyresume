@@ -12,7 +12,7 @@ $regListResume = array(
     'address' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\-\(\)\[\] ,.]{1,50}$/u',
     'education' => '/^[1-5]{1}$/u',
     'school' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\'"\-\(\) ,.]{1,20}$/u',
-    'major' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\'"\-\(\) ,]{1,20}$/u',
+    'major' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\'"\+\-\(\) ,]{1,20}$/u',
     'awards' => '/^[A-Za-z0-9\x{0391}-\x{FFE5}\'":,.\(\)\[\]\{\} ·]{0,1024}$/u',
     'work-time' => '/^[1-5]{1}$/u',
     'job-status' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\-\(\) ,.]{1,30}$/u',
@@ -25,7 +25,7 @@ $regListResume = array(
     'cs-ability' => '/^[0-9]{1,3}$/u',
     'git-ability' => '/^[0-9]{1,3}$/u',
     'latax-ability' => '/^[0-9]{1,3}$/u',
-    'statement' => '/^[\w\x{0391}-\x{FFE5}\'":;\s\(\)\[\]\{\}\-,.]{0,256}$/u');
+    'statement' => '/^[\w\x{0391}-\x{FFE5}\'"\/\+:;\s\(\)\[\]\{\}\-,.]{0,500}$/u');
 
 function varify($data, $regList)
 {

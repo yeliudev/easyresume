@@ -83,29 +83,29 @@ if ($avatarUrl) {
                     <canvas id="chart" height="110px">This browser does not support HTML5 Canvas.</canvas>
                     <div class="flex-container">
                         <div class="chart-label">
-                            <div class="label-icon cpp-slider"></div>
+                            <div class="label-icon cpp"></div>
                             <label class="label-text">C/C++</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon py-slider"></div>
+                            <div class="label-icon py"></div>
                             <label class="label-text">Python</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon java-slider"></div>
+                            <div class="label-icon java"></div>
                             <label class="label-text">JAVA</label>
                         </div>
                     </div>
                     <div class="flex-container">
                         <div class="chart-label">
-                            <div class="label-icon cs-slider"></div>
+                            <div class="label-icon cs"></div>
                             <label class="label-text">C#</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon git-slider"></div>
+                            <div class="label-icon git"></div>
                             <label class="label-text">Git</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon latax-slider"></div>
+                            <div class="label-icon latax"></div>
                             <label class="label-text">LaTaX</label>
                         </div>
                     </div>

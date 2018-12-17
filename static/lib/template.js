@@ -41,7 +41,7 @@ var awardTableTemplate = '<div id="award-table" class="column is-10 is-offset-1 
     jobTemplate = '\
                         <div class="column is-3">\
                             <div class="control">\
-                                <div class="field has-addons">\
+                                <div class="field has-addons is-year">\
                                     <p class="control">\
                                         <input class="input" type="text" name="job-from-time" placeholder="年份" data-valid="4 isNotEmpty isNum" onblur="onVarify(this, true)">\
                                     </p>\

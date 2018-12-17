@@ -22,26 +22,26 @@
     font-size: 12px;
 }
 
-.cpp-slider {
+.cpp {
     background-color: rgba(236, 208, 120, 0.7);
 }
 
-.py-slider {
+.py {
     background-color: rgba(217, 91, 67, 0.7);
 }
 
-.java-slider {
+.java {
     background-color: rgba(192, 41, 66, 0.7);
 }
 
-.cs-slider {
+.cs {
     background-color: rgba(84, 36, 55, 0.7);
 }
 
-.git-slider {
+.git {
     background-color: rgba(83, 119, 122, 0.7);
 }
 
-.latax-slider {
+.latax {
     background-color: rgba(119, 146, 174, 0.7);
 }

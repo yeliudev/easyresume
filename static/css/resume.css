@@ -30,6 +30,24 @@ input[type=range], progress {
     bottom: -4px;
 }
 
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: solid 0.03em #969696;
+    box-shadow: 0 1px 1px #3b4547;
+}
+
+input[type=range]::-ms-thumb {
+    height: 14px;
+    width: 14px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: solid 1px #a5afb1;
+}
+
 .help {
     display: none;
 }
@@ -110,6 +128,10 @@ input[type=range], progress {
     border-radius: 4px;
     box-shadow: 1px 1px 5px #a1a1a1;
     margin: 20px 0;
+}
+
+.is-year {
+    margin-bottom: 0 !important;
 }
 
 .is-align-top {
@@ -209,11 +231,18 @@ input[type=range], progress {
 .message.is-bottom-right {
     display: none;
     position: fixed;
-    height: 134px;
     width: 300px;
     right: 25px;
     bottom: 5px;
     z-index: 100;
+}
+
+.message.is-success {
+    height: 110px;
+}
+
+.message.is-danger {
+    height: 134px;
 }
 
 .message.display {

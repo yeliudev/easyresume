@@ -39,7 +39,7 @@ var checkService = {
 
     isNormalStr: function (val) {
         if (val == null || val == '') return true
-        var reg = /^[\w\u0391-\uFFE5:;'"\s\-\(\)\[\]\{\},.]+$/
+        var reg = /^[\w\u0391-\uFFE5:;'"\s\-\/\+\(\)\[\]\{\},.]+$/
         return reg.test(val)
     },
 

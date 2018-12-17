@@ -249,21 +249,26 @@ function onSubmit() {
         timeout: 5000,
         success: function (res) {
             if (res.success) {
+                document.getElementById('message-success').classList.add('display')
                 window.location.href = res.url
             } else {
                 document.getElementById('message-body').innerHTML = res.errMsg
-                document.getElementById('message').classList.add('display')
+                document.getElementById('message-error').classList.add('display')
             }
         },
         error: function () {
             document.getElementById('message-body').innerHTML = '网络连接失败，请稍后重试'
-            document.getElementById('message').classList.add('display')
+            document.getElementById('message-error').classList.add('display')
         }
     })
 }
 
-function onCloseMessage() {
-    document.getElementById('message').classList.remove('display')
+function onCloseSuccess() {
+    document.getElementById('message-success').classList.remove('display')
+}
+
+function onCloseError() {
+    document.getElementById('message-error').classList.remove('display')
 }
 
 function onEditClick() {

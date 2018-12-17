@@ -7,7 +7,7 @@ function appendJobs($jobs)
         echo '<div class="columns">';
         echo '<div class="column is-3">';
         echo '<div class="control">';
-        echo '<div class="field has-addons">';
+        echo '<div class="field has-addons is-year">';
         echo '<p class="control">';
         echo '<input class="input" type="text" name="job-from-time" placeholder="年份" data-valid="4 isNotEmpty isNum" value="' . $item['from'] . '" onblur="onVarify(this, true)">';
         echo '</p>';

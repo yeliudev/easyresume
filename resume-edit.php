@@ -91,29 +91,29 @@ if ($avatarUrl) {
                     <canvas id="chart" height="110px">This browser does not support HTML5 Canvas.</canvas>
                     <div class="flex-container">
                         <div class="chart-label">
-                            <div class="label-icon cpp-slider"></div>
+                            <div class="label-icon cpp"></div>
                             <label class="label-text">C/C++</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon py-slider"></div>
+                            <div class="label-icon py"></div>
                             <label class="label-text">Python</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon java-slider"></div>
+                            <div class="label-icon java"></div>
                             <label class="label-text">JAVA</label>
                         </div>
                     </div>
                     <div class="flex-container">
                         <div class="chart-label">
-                            <div class="label-icon cs-slider"></div>
+                            <div class="label-icon cs"></div>
                             <label class="label-text">C#</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon git-slider"></div>
+                            <div class="label-icon git"></div>
                             <label class="label-text">Git</label>
                         </div>
                         <div class="chart-label">
-                            <div class="label-icon latax-slider"></div>
+                            <div class="label-icon latax"></div>
                             <label class="label-text">LaTaX</label>
                         </div>
                     </div>
@@ -340,14 +340,14 @@ if ($avatarUrl) {
                     <label class="label is-align-right">C/C++</label>
                 </div>
                 <div class="column is-4">
-                    <input id="cpp-slider" class="cpp-slider" type="range" name="cpp-ability" min="1" max="100" value="<?php echo $cpp_ability; ?>" onchange="drawChart()">
+                    <input id="cpp-slider" class="cpp" type="range" name="cpp-ability" min="1" max="100" value="<?php echo $cpp_ability; ?>" onchange="drawChart()">
                 </div>
 
                 <div class="column is-1">
                     <label class="label is-align-right">Python<label>
                 </div>
                 <div class="column is-4">
-                    <input id="py-slider" class="py-slider" type="range" name="py-ability" min="1" max="100" value="<?php echo $py_ability; ?>" onchange="drawChart()">
+                    <input id="py-slider" class="py" type="range" name="py-ability" min="1" max="100" value="<?php echo $py_ability; ?>" onchange="drawChart()">
                 </div>
             </div>
 
@@ -356,14 +356,14 @@ if ($avatarUrl) {
                     <label class="label is-align-right">JAVA</label>
                 </div>
                 <div class="column is-4">
-                    <input id="java-slider" class="java-slider" type="range" name="java-ability" min="1" max="100" value="<?php echo $java_ability; ?>" onchange="drawChart()">
+                    <input id="java-slider" class="java" type="range" name="java-ability" min="1" max="100" value="<?php echo $java_ability; ?>" onchange="drawChart()">
                 </div>
 
                 <div class="column is-1">
                     <label class="label is-align-right">C#<label>
                 </div>
                 <div class="column is-4">
-                    <input id="cs-slider" class="cs-slider" type="range" name="cs-ability" min="1" max="100" value="<?php echo $cs_ability; ?>" onchange="drawChart()">
+                    <input id="cs-slider" class="cs" type="range" name="cs-ability" min="1" max="100" value="<?php echo $cs_ability; ?>" onchange="drawChart()">
                 </div>
             </div>
 
@@ -372,21 +372,21 @@ if ($avatarUrl) {
                     <label class="label is-align-right">Git</label>
                 </div>
                 <div class="column is-4">
-                    <input id="git-slider" class="git-slider" type="range" name="git-ability" min="1" max="100" value="<?php echo $git_ability; ?>" onchange="drawChart()">
+                    <input id="git-slider" class="git" type="range" name="git-ability" min="1" max="100" value="<?php echo $git_ability; ?>" onchange="drawChart()">
                 </div>
 
                 <div class="column is-1">
                     <label class="label is-align-right">LaTaX<label>
                 </div>
                 <div class="column is-4">
-                    <input id="latax-slider" class="latax-slider" type="range" name="latax-ability" min="1" max="100" value="<?php echo $latax_ability; ?>" onchange="drawChart()">
+                    <input id="latax-slider" class="latax" type="range" name="latax-ability" min="1" max="100" value="<?php echo $latax_ability; ?>" onchange="drawChart()">
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">个人陈述</label>
                 <div class="control">
-                    <textarea id="statement" class="textarea" name="statement" placeholder="对简历内容的补充说明" data-valid="256 isNormalStr" onblur="onVarify(this)"><?php echo $statement; ?></textarea>
+                    <textarea id="statement" class="textarea" name="statement" placeholder="对简历内容的补充说明" data-valid="512 isNormalStr" onblur="onVarify(this)"><?php echo $statement; ?></textarea>
                     <p id="statement-warning" class="help is-danger">不是有效的个人陈述</p>
                 </div>
             </div>
@@ -406,10 +406,18 @@ if ($name) {
         </form>
     </section>
 
-    <article id="message" class="message is-danger is-bottom-right">
+    <article id="message-success" class="message is-success is-bottom-right">
         <div class="message-header">
             <p>提示</p>
-            <button class="delete" onclick="onCloseMessage()"></button>
+            <button class="delete" onclick="onCloseSuccess()"></button>
+        </div>
+        <div class="message-body">保存成功</div>
+    </article>
+
+    <article id="messgae-error" class="message is-danger is-bottom-right">
+        <div class="message-header">
+            <p>提示</p>
+            <button class="delete" onclick="onCloseError()"></button>
         </div>
         <div id="message-body" class="message-body"></div>
     </article>
