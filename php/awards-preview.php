@@ -1,4 +1,6 @@
 <?php
+$levelMap = array('0' => '校级', '1' => '市级', '2' => '省级', '3' => '国家级', '4' => '世界级');
+
 function appendAwards($awards)
 {
     echo '<div class="field">';
@@ -19,7 +21,7 @@ function appendAwards($awards)
     foreach ($awards as $item) {
         echo '<tr>';
         echo '<td>' . $item['time'] . '</td>';
-        echo '<td>' . $item['level'] . '</td>';
+        echo '<td>' . $levelMap[$item['level']] . '</td>';
         echo '<td>' . $item['title'] . '</td>';
         echo '</tr>';
     }

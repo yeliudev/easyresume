@@ -15,11 +15,11 @@ var awardTableTemplate = '<div id="award-table" class="column is-10 is-offset-1 
                         <div class="column is-2">\
                             <div class="select">\
                                 <select name="award-level">\
-                                    <option>校级</option>\
-                                    <option>市级</option>\
-                                    <option>省级</option>\
-                                    <option>国家级</option>\
-                                    <option>世界级</option>\
+                                    <option value="0">校级</option>\
+                                    <option value="1">市级</option>\
+                                    <option value="2">省级</option>\
+                                    <option value="3">国家级</option>\
+                                    <option value="4">世界级</option>\
                                 </select>\
                             </div>\
                         </div>\

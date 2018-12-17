@@ -15,11 +15,11 @@ function appendAwards($awards)
         echo '<div class="column is-2">';
         echo '<div class="select">';
         echo '<select name="award-level">';
-        echo $item['level'] == '0' ? '<option selected>校级</option>' : '<option>校级</option>';
-        echo $item['level'] == '1' ? '<option selected>市级</option>' : '<option>市级</option>';
-        echo $item['level'] == '2' ? '<option selected>省级</option>' : '<option>省级</option>';
-        echo $item['level'] == '3' ? '<option selected>国家级</option>' : '<option>国家级</option>';
-        echo $item['level'] == '4' ? '<option selected>世界级</option>' : '<option>世界级</option>';
+        echo $item['level'] == '0' ? '<option value="0" selected>校级</option>' : '<option value="0">校级</option>';
+        echo $item['level'] == '1' ? '<option value="1" selected>市级</option>' : '<option value="1">市级</option>';
+        echo $item['level'] == '2' ? '<option value="2" selected>省级</option>' : '<option value="2">省级</option>';
+        echo $item['level'] == '3' ? '<option value="3" selected>国家级</option>' : '<option value="3">国家级</option>';
+        echo $item['level'] == '4' ? '<option value="4" selected>世界级</option>' : '<option value="4">世界级</option>';
         echo '</select>';
         echo '</div>';
         echo '</div>';
