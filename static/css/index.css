@@ -139,3 +139,18 @@ form input:focus {
 .is-invisible {
   display: none !important;
 }
+
+.statement {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  height: 40px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.license {
+  color: white;
+  text-decoration: none;
+}
