@@ -1,5 +1,5 @@
 <p align="center">
-  <img with="100" height="100" src=".github/icon.png" alt="icon">
+  <img with="100" height="100" src=".github/logo.png" alt="icon">
 </p>
 
 <h1 align="center">EasyResume - An online resume management system</h1>
