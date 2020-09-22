@@ -16,7 +16,7 @@ if (!hasUser($conn, $_SESSION['username'])) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $education, $school, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -32,7 +32,7 @@ $jobs = $jobs ? json_decode($jobs, true) : false;
 $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
 ?>
 
-<!-- Created by Ye Liu -->
+<!-- Written by Ye Liu -->
 
 <!DOCTYPE html>
 <html>
@@ -47,7 +47,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
     <link rel="stylesheet" href="./static/css/bulma.modified.min.css">
     <link rel="stylesheet" href="./static/css/resume.css">
     <link rel="stylesheet" href="./static/css/chart.css">
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.transit/0.9.12/jquery.transit.min.js"></script>
     <script src="./static/lib/verification.js"></script>
 </head>
@@ -225,26 +225,26 @@ if ($avatarUrl) {
                 <div class="column is-2">
                     <label class="label">学历</label>
                     <div class="select">
-                        <select name="education" onchange="onVarify(this, false, true)">
-                            <option value="0" <?php if ($education == '0') {echo 'selected';} ?>>请选择</option>
-                            <option value="1" <?php if ($education == '1') {echo 'selected';} ?>>高中及以下</option>
-                            <option value="2" <?php if ($education == '2') {echo 'selected';} ?>>专科</option>
-                            <option value="3" <?php if ($education == '3') {echo 'selected';} ?>>本科</option>
-                            <option value="4" <?php if ($education == '4') {echo 'selected';} ?>>硕士</option>
-                            <option value="5" <?php if ($education == '5') {echo 'selected';} ?>>博士</option>
+                        <select name="degree" onchange="onVarify(this, false, true)">
+                            <option value="0" <?php if ($degree == '0') {echo 'selected';} ?>>请选择</option>
+                            <option value="1" <?php if ($degree == '1') {echo 'selected';} ?>>高中及以下</option>
+                            <option value="2" <?php if ($degree == '2') {echo 'selected';} ?>>专科</option>
+                            <option value="3" <?php if ($degree == '3') {echo 'selected';} ?>>本科</option>
+                            <option value="4" <?php if ($degree == '4') {echo 'selected';} ?>>硕士</option>
+                            <option value="5" <?php if ($degree == '5') {echo 'selected';} ?>>博士</option>
                         </select>
                     </div>
-                    <p id="education-warning" class="help is-danger">请选择学历</p>
+                    <p id="degree-warning" class="help is-danger">请选择学历</p>
                 </div>
 
                 <div class="column is-4">
                     <label class="label">毕业院校</label>
                     <div class="control has-icons-left">
-                        <input id="school" class="input" type="text" name="school" data-valid="20 isNotEmpty isNormalStr" value="<?php echo $school; ?>" onblur="onVarify(this)">
+                        <input id="institution" class="input" type="text" name="institution" data-valid="20 isNotEmpty isNormalStr" value="<?php echo $institution; ?>" onblur="onVarify(this)">
                         <span class="icon is-small is-left">
                             <i class="fa fa-university"></i>
                         </span>
-                        <p id="school-warning" class="help is-danger">不是有效的毕业院校名称</p>
+                        <p id="institution-warning" class="help is-danger">不是有效的毕业院校名称</p>
                     </div>
                 </div>
 
@@ -274,7 +274,7 @@ if ($avatarUrl) {
                 <div class="column is-2">
                     <label class="label">工作年限</label>
                     <div class="select">
-                        <select name="work-time" onchange="onVarify(this, false, true)">
+                        <select name="working-years" onchange="onVarify(this, false, true)">
                             <option value="0" <?php if ($work_time == '0') {echo 'selected';} ?>>请选择</option>
                             <option value="1" <?php if ($work_time == '1') {echo 'selected';} ?>>一年及以内</option>
                             <option value="2" <?php if ($work_time == '2') {echo 'selected';} ?>>一至三年</option>
@@ -283,7 +283,7 @@ if ($avatarUrl) {
                             <option value="5" <?php if ($work_time == '5') {echo 'selected';} ?>>十年及以上</option>
                         </select>
                     </div>
-                    <p id="work-time-warning" class="help is-danger">请选择工作年限</p>
+                    <p id="working-years-warning" class="help is-danger">请选择工作年限</p>
                 </div>
 
                 <div class="column is-4">
@@ -395,13 +395,13 @@ if ($avatarUrl) {
                 <div class="control">
                     <button type="submit" class="button is-link" onclick="onSubmit()">提交</button>
                 </div>
-<?php
-if ($name) {
+
+<?php if ($name) {
     echo '<div class="control">';
     echo '<button class="button is-light" onclick="onCancelClick()">取消</button>';
     echo '</div>';
-}
-?>
+} ?>
+
             </div>
         </form>
     </section>
@@ -424,7 +424,7 @@ if ($name) {
 </body>
 
 <script src="./static/lib/background.js"></script>
-<script src="./static/lib/template.js"></script>
 <script src="./static/lib/resume.js"></script>
+<script src="./static/lib/template.js"></script>
 
 </html>

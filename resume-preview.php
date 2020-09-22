@@ -16,7 +16,7 @@ if (!hasUser($conn, $_SESSION['username'])) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $education, $school, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -37,7 +37,7 @@ $jobs = $jobs ? json_decode($jobs, true) : false;
 $birthdate = date('Y-m-d', strtotime($birthdate));
 ?>
 
-<!-- Created by Ye Liu -->
+<!-- Written by Ye Liu -->
 
 <!DOCTYPE html>
 <html>
@@ -52,8 +52,8 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
     <link rel="stylesheet" href="./static/css/bulma.modified.min.css">
     <link rel="stylesheet" href="./static/css/resume.css">
     <link rel="stylesheet" href="./static/css/chart.css">
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery.transit/0.9.12/jquery.transit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.transit@0.9.12/jquery.transit.min.js"></script>
 </head>
 
 <body>
@@ -192,7 +192,7 @@ if ($avatarUrl) {
                     <label class="label">学历</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
-switch ($education) {
+switch ($degree) {
     case 1:
         echo '高中及以下';
         break;
@@ -217,7 +217,7 @@ switch ($education) {
                 <div class="column is-5">
                     <label class="label">毕业院校</label>
                     <div class="control">
-                        <input class="input is-static" type="text" value="<?php echo $school; ?>" readonly>
+                        <input class="input is-static" type="text" value="<?php echo $institution; ?>" readonly>
                     </div>
                 </div>
 
@@ -374,7 +374,7 @@ echo ' 元人民币'; ?>" readonly>
 </body>
 
 <script src="./static/lib/background.js"></script>
-<script src="./static/lib/template.js"></script>
 <script src="./static/lib/resume.js"></script>
+<script src="./static/lib/template.js"></script>
 
 </html>

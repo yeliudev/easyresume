@@ -1,4 +1,4 @@
-/*! Created by Ye Liu */
+/* Written by Ye Liu */
 
 'use strict'
 
