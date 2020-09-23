@@ -16,7 +16,7 @@ if (!hasUser($conn, $_SESSION['username'])) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $working_years, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -239,7 +239,7 @@ switch ($degree) {
                     <label class="label">工作年限</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
-switch ($work_time) {
+switch ($working_years) {
     case 1:
         echo '一年及以内';
         break;

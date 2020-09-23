@@ -16,7 +16,7 @@ if (!hasUser($conn, $_SESSION['username'])) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $work_time, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $working_years, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -275,12 +275,12 @@ if ($avatarUrl) {
                     <label class="label">工作年限</label>
                     <div class="select">
                         <select name="working-years" onchange="onVarify(this, false, true)">
-                            <option value="0" <?php if ($work_time == '0') {echo 'selected';} ?>>请选择</option>
-                            <option value="1" <?php if ($work_time == '1') {echo 'selected';} ?>>一年及以内</option>
-                            <option value="2" <?php if ($work_time == '2') {echo 'selected';} ?>>一至三年</option>
-                            <option value="3" <?php if ($work_time == '3') {echo 'selected';} ?>>三至五年</option>
-                            <option value="4" <?php if ($work_time == '4') {echo 'selected';} ?>>五至十年</option>
-                            <option value="5" <?php if ($work_time == '5') {echo 'selected';} ?>>十年及以上</option>
+                            <option value="0" <?php if ($working_years == '0') {echo 'selected';} ?>>请选择</option>
+                            <option value="1" <?php if ($working_years == '1') {echo 'selected';} ?>>一年及以内</option>
+                            <option value="2" <?php if ($working_years == '2') {echo 'selected';} ?>>一至三年</option>
+                            <option value="3" <?php if ($working_years == '3') {echo 'selected';} ?>>三至五年</option>
+                            <option value="4" <?php if ($working_years == '4') {echo 'selected';} ?>>五至十年</option>
+                            <option value="5" <?php if ($working_years == '5') {echo 'selected';} ?>>十年及以上</option>
                         </select>
                     </div>
                     <p id="working-years-warning" class="help is-danger">请选择工作年限</p>
