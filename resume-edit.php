@@ -16,7 +16,7 @@ if (!hasUser($conn, $_SESSION['username'])) {
 // 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $working_years, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modify);
+$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $working_years, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modified);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
@@ -42,9 +42,9 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>简历编辑<?php echo $name ? ' - ' . $name : ''; ?></title>
     <link rel="shortcut icon" href="./static/assets/favicon.ico">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./static/css/background.css">
-    <link rel="stylesheet" href="./static/css/bulma.modified.min.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/resume.css">
     <link rel="stylesheet" href="./static/css/chart.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -57,7 +57,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">请完善您的简历</h1>
-                <h3 class="subtitle is-7">最后修改时间：<?php echo $last_modify ? $last_modify : '无'; ?></h3>
+                <h3 class="subtitle is-7">最后修改时间：<?php echo $last_modified ? $last_modified : '无'; ?></h3>
             </div>
         </div>
     </section>

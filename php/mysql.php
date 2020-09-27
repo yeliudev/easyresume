@@ -6,9 +6,9 @@ define('DB_NAME', '');
 
 define('SQL_CHECK', "SELECT 1 FROM user WHERE username=? LIMIT 1");
 define('SQL_SELECT_USER', "SELECT salt,password,name FROM user WHERE username=? LIMIT 1");
-define('SQL_SELECT_RESUME', "SELECT name,sex,avatarUrl,birthdate,birthplace,cellphone,email,residence,address,degree,institution,major,awards,working_years,job_status,salary_type,salary,jobs,cpp_ability,py_ability,java_ability,cs_ability,git_ability,latax_ability,statement,last_modify FROM user WHERE username=? LIMIT 1");
-define('SQL_UPDATE_ALL', "UPDATE user SET name=?,sex=?,avatarUrl=?,birthdate=FROM_UNIXTIME(?),birthplace=?,cellphone=?,email=?,residence=?,address=?,degree=?,institution=?,major=?,awards=?,working_years=?,job_status=?,salary_type=?,salary=?,jobs=?,cpp_ability=?,py_ability=?,java_ability=?,cs_ability=?,git_ability=?,latax_ability=?,statement=?,last_modify=FROM_UNIXTIME(?) WHERE username=?");
-define('SQL_UPDATE', "UPDATE user SET name=?,sex=?,birthdate=FROM_UNIXTIME(?),birthplace=?,cellphone=?,email=?,residence=?,address=?,degree=?,institution=?,major=?,awards=?,working_years=?,job_status=?,salary_type=?,salary=?,jobs=?,cpp_ability=?,py_ability=?,java_ability=?,cs_ability=?,git_ability=?,latax_ability=?,statement=?,last_modify=FROM_UNIXTIME(?) WHERE username=?");
+define('SQL_SELECT_RESUME', "SELECT name,sex,avatarUrl,birthdate,birthplace,cellphone,email,residence,address,degree,institution,major,awards,working_years,job_status,salary_type,salary,jobs,cpp_ability,py_ability,java_ability,cs_ability,git_ability,latax_ability,statement,last_modified FROM user WHERE username=? LIMIT 1");
+define('SQL_UPDATE_ALL', "UPDATE user SET name=?,sex=?,avatarUrl=?,birthdate=FROM_UNIXTIME(?),birthplace=?,cellphone=?,email=?,residence=?,address=?,degree=?,institution=?,major=?,awards=?,working_years=?,job_status=?,salary_type=?,salary=?,jobs=?,cpp_ability=?,py_ability=?,java_ability=?,cs_ability=?,git_ability=?,latax_ability=?,statement=?,last_modified=FROM_UNIXTIME(?) WHERE username=?");
+define('SQL_UPDATE', "UPDATE user SET name=?,sex=?,birthdate=FROM_UNIXTIME(?),birthplace=?,cellphone=?,email=?,residence=?,address=?,degree=?,institution=?,major=?,awards=?,working_years=?,job_status=?,salary_type=?,salary=?,jobs=?,cpp_ability=?,py_ability=?,java_ability=?,cs_ability=?,git_ability=?,latax_ability=?,statement=?,last_modified=FROM_UNIXTIME(?) WHERE username=?");
 define('SQL_INSERT_USER', "INSERT user (username,salt,password) VALUES (?,?,?)");
 
 function hasUser($conn, $username)
