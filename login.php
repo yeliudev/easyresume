@@ -4,7 +4,7 @@ header('Content-Type:application/json; charset=utf-8');
 // 校验数据合法性
 include './php/verification.php';
 
-if (!varify($_POST, $regListUser)) {
+if (!verify($_POST, $regListUser)) {
     $data = array('success' => false, 'errMsg' => '用户名或密码不合法');
     exit(json_encode($data));
 }

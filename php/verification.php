@@ -27,7 +27,7 @@ $regListResume = array(
     'latax-ability' => '/^[0-9]{1,3}$/u',
     'statement' => '/^[\w\x{0391}-\x{FFE5}\'"\/\+:;\s\(\)\[\]\{\}\-,.]{0,500}$/u');
 
-function varify($data, $regList)
+function verify($data, $regList)
 {
     foreach ($regList as $reg) {
         if (!preg_match($reg, $data[array_keys($regList, $reg, true)[0]])) {

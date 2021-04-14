@@ -50,7 +50,7 @@ var checkService = {
     }
 }
 
-function varify(id) {
+function verify(id) {
     var val = document.getElementById(id).value,
         valids = document.getElementById(id).dataset.valid.split(' ')
 

@@ -192,7 +192,7 @@ function onVarify(e, isJobTime = false, isSelector = false) {
         var index = e.id.replace(/[^0-9]/ig, ''),
             fromInput = document.getElementById('jobs[' + index + '][from]'),
             toInput = document.getElementById('jobs[' + index + '][to]')
-        if (varify('jobs[' + index + '][from]') && varify('jobs[' + index + '][to]') && parseInt(fromInput.value) <= parseInt(toInput.value)) {
+        if (verify('jobs[' + index + '][from]') && verify('jobs[' + index + '][to]') && parseInt(fromInput.value) <= parseInt(toInput.value)) {
             document.getElementById('jobs[' + index + '][time]-warning').classList.remove('display')
             fromInput.classList.remove('is-danger')
             toInput.classList.remove('is-danger')
@@ -202,7 +202,7 @@ function onVarify(e, isJobTime = false, isSelector = false) {
             toInput.classList.add('is-danger')
         }
     } else {
-        if (varify(e.id)) {
+        if (verify(e.id)) {
             document.getElementById(e.id + '-warning').classList.remove('display')
             e.classList.remove('is-danger')
         } else {

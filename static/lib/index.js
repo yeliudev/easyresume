@@ -5,7 +5,7 @@
 function submit() {
     // 输入合法性校验
     for (var i = 0; i < $('input').length; i++) {
-        if (!varify($('input')[i].id)) {
+        if (!verify($('input')[i].id)) {
             $('.error-label').html('用户名或密码不合法')
             $('form').fadeIn(500)
             $('.error-label').removeClass('is-invisible')
