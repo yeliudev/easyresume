@@ -5,7 +5,7 @@ $regListUser = array(
 $regListResume = array(
     'name' => '/^[A-Za-z\x{4e00}-\x{9fa5}.\(\) ·]{1,15}$/u',
     'birthdate' => '/^[0-9\-]{10}$/u',
-    'birthplace' => '/^[a-zA-Z0-9\x{4e00}-\x{9fa5}\-\(\) ,.]{1,10}$/u',
+    'hometown' => '/^[a-zA-Z0-9\x{4e00}-\x{9fa5}\-\(\) ,.]{1,10}$/u',
     'cellphone' => '/^[0-9]{11}$/u',
     'email' => '/^[\w]+@[A-Za-z0-9]+.[A-Za-z0-9.]{1,30}$/u',
     'residence' => '/^[a-zA-Z0-9\x{0391}-\x{FFE5}\-\(\)\[\] ,.]{1,50}$/u',
@@ -34,6 +34,5 @@ function verify($data, $regList)
             return false;
         }
     }
-
     return true;
 }

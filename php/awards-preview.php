@@ -1,10 +1,10 @@
 <?php
 function appendAwards($awards)
 {
-    $levelMap = array('0' => '校级', '1' => '市级', '2' => '省级', '3' => '国家级', '4' => '世界级');
+    $levelMap = array('0' => 'Collegewide', '1' => 'Citywide', '2' => 'Statewide', '3' => 'Nationwide', '4' => 'Worldwide');
 
     echo '<div class="field">';
-    echo '<label class="label">获奖经历</label>';
+    echo '<label class="label">Awards</label>';
     echo '<div class="control">';
     echo '<div class="columns">';
     echo '<div class="column is-10 is-offset-1">';
@@ -12,9 +12,9 @@ function appendAwards($awards)
     echo '<table class="table is-fat">';
     echo '<thead>';
     echo '<tr>';
-    echo '<th>年份</th>';
-    echo '<th>奖项级别</th>';
-    echo '<th>奖项名称</th>';
+    echo '<th>Year</th>';
+    echo '<th>Award Level</th>';
+    echo '<th>Award Name</th>';
     echo '</tr>';
     echo '</thead>';
     echo '<tbody>';

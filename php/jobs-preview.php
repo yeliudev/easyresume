@@ -2,7 +2,7 @@
 function appendJobs($jobs)
 {
     echo '<div class="field">';
-    echo '<label class="label">工作经历</label>';
+    echo '<label class="label">Work Experience</label>';
     echo '<div class="control">';
     echo '<div class="columns">';
     echo '<div class="column is-10 is-offset-1">';
@@ -10,9 +10,9 @@ function appendJobs($jobs)
     echo '<table class="table">';
     echo '<thead>';
     echo '<tr>';
-    echo '<th>起止年份</th>';
-    echo '<th>公司名称</th>';
-    echo '<th>职务</th>';
+    echo '<th>Period</th>';
+    echo '<th>Company Name</th>';
+    echo '<th>Position</th>';
     echo '</tr>';
     echo '</thead>';
     echo '<tbody>';

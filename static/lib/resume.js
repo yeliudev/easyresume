@@ -32,7 +32,6 @@ function drawChart() {
 }
 
 function displayAvatar() {
-    // 将照片用 base64 编码展示
     var avatarFile = document.getElementById('avatar-input').files[0]
 
     if (avatarFile) {
@@ -41,7 +40,7 @@ function displayAvatar() {
             document.getElementById('avatar').style.backgroundImage = 'url(' + e.target.result + ')'
         }
         reader.readAsDataURL(avatarFile)
-        document.getElementById('avatar').src = './static/assets/transparent.png'
+        document.getElementById('avatar').src = 'static/assets/transparent.png'
     }
 
     if (avatarFile.size > 2097152) {
@@ -52,9 +51,8 @@ function displayAvatar() {
 }
 
 function onSexClick(e) {
-    // 若无自定义照片则切换默认照片
     if (!document.getElementById('avatar').style.backgroundImage) {
-        document.getElementById('avatar').src = './static/assets/' + (e == 'male' ? 'male.png' : 'female.png')
+        document.getElementById('avatar').src = 'static/assets/' + (e == 'male' ? 'male.png' : 'female.png')
     }
 }
 
@@ -98,7 +96,6 @@ function parseDom(template, id = false) {
 }
 
 function onAddAwardClick() {
-    // 若为第一条记录则添加容器结点
     if (document.getElementById('award-table') == null) {
         document.getElementById('resume').insertBefore(parseDom(awardTableTemplate, 'award-table-container'), document.getElementById('after-award-table'))
     }
@@ -106,16 +103,14 @@ function onAddAwardClick() {
     var awardTable = document.getElementById('award-table'),
         addAwardBtn = document.getElementById('add-award-btn')
 
-    // 若满10条记录则停止添加
     if (awardTable.childElementCount < 9) {
         awardTable.appendChild(parseDom(awardTemplate))
     } else if (awardTable.childElementCount == 9) {
         awardTable.appendChild(parseDom(awardTemplate))
         addAwardBtn.setAttribute('class', addAwardBtn.getAttribute('class').replace('primary', 'static'))
-        addAwardBtn.innerHTML = '最多添加十项'
+        addAwardBtn.innerHTML = 'Maximum number of rows exceeded'
     }
 
-    // 重新编码列表
     encodeTable()
 }
 
@@ -123,23 +118,19 @@ function onDelAwardClick(e) {
     var awardTable = document.getElementById('award-table'),
         addAwardBtn = document.getElementById('add-award-btn')
 
-    // 删除一条记录
     awardTable.removeChild(e.parentNode.parentNode)
 
-    // 若少于10条记录则恢复按钮，无记录则删除容器结点
     if (awardTable.childElementCount == 9) {
         addAwardBtn.setAttribute('class', addAwardBtn.getAttribute('class').replace('static', 'primary'))
-        addAwardBtn.innerHTML = '添加一项'
+        addAwardBtn.innerHTML = 'Add'
     } else if (!awardTable.childElementCount) {
         document.getElementById('resume').removeChild(document.getElementById('award-table-container'))
     }
 
-    // 重新编码列表
     encodeTable()
 }
 
 function onAddJobClick() {
-    // 若为第一条记录则添加容器结点
     if (document.getElementById('job-table') == null) {
         document.getElementById('resume').insertBefore(parseDom(jobTableTemplate, 'job-table-container'), document.getElementById('after-job-table'))
     }
@@ -147,16 +138,14 @@ function onAddJobClick() {
     var jobTable = document.getElementById('job-table'),
         addJobBtn = document.getElementById('add-job-btn')
 
-    // 若满10条记录则停止添加
     if (jobTable.childElementCount < 4) {
         jobTable.appendChild(parseDom(jobTemplate))
     } else if (jobTable.childElementCount == 4) {
         jobTable.appendChild(parseDom(jobTemplate))
         addJobBtn.setAttribute('class', addJobBtn.getAttribute('class').replace('primary', 'static'))
-        addJobBtn.innerHTML = '最多添加五项'
+        addJobBtn.innerHTML = 'Maximum number of rows exceeded'
     }
 
-    // 重新编码列表
     encodeTable()
 }
 
@@ -164,18 +153,15 @@ function onDelJobClick(e) {
     var jobTable = document.getElementById('job-table'),
         addJobBtn = document.getElementById('add-job-btn')
 
-    // 删除一条记录
     jobTable.removeChild(e.parentNode.parentNode)
 
-    // 若少于10条记录则恢复按钮，无记录则删除容器结点
     if (jobTable.childElementCount == 4) {
         addJobBtn.setAttribute('class', addJobBtn.getAttribute('class').replace('static', 'primary'))
-        addJobBtn.innerHTML = '添加一项'
+        addJobBtn.innerHTML = 'Add'
     } else if (!jobTable.childElementCount) {
         document.getElementById('resume').removeChild(document.getElementById('job-table-container'))
     }
 
-    // 重新编码列表
     encodeTable()
 }
 
@@ -257,7 +243,7 @@ function onSubmit() {
             }
         },
         error: function () {
-            document.getElementById('message-body').innerHTML = '网络连接失败，请稍后重试'
+            document.getElementById('message-body').innerHTML = 'Connection lost'
             document.getElementById('message-error').classList.add('display')
         }
     })

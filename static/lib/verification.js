@@ -54,12 +54,10 @@ function verify(id) {
     var val = document.getElementById(id).value,
         valids = document.getElementById(id).dataset.valid.split(' ')
 
-    // 字符串长度校验
     if (!checkService.stringLengthCheck(val, parseInt(valids[0]))) {
         return false
     }
 
-    // 字符串内容校验
     for (var i = 1; i < valids.length; i++) {
         if (!checkService[valids[i]](val)) {
             return false

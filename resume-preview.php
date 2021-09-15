@@ -1,39 +1,33 @@
 <?php
-include './php/session.php';
+include 'php/session.php';
 
 header('content-type:text/html; charset=utf8');
 
-// 连接数据库
-include './php/mysql.php';
+include 'php/mysql.php';
 
-// 检查用户是否存在
 if (!hasUser($conn, $_SESSION['username'])) {
-    echo "<script>alert('用户不存在，请先登录！');window.location.href='index.html';</script>";
+    echo "<script>alert('Please sign in first!');window.location.href='index.html';</script>";
     $conn->close();
     exit();
 }
 
-// 读取简历信息
 $sql_stmt = $conn->prepare(SQL_SELECT_RESUME);
 $sql_stmt->bind_param('s', $_SESSION['username']);
-$sql_stmt->bind_result($name, $sex, $avatarUrl, $birthdate, $birthplace, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $working_years, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_modified);
+$sql_stmt->bind_result($name, $gender, $avatar, $birthdate, $hometown, $cellphone, $email, $residence, $address, $degree, $institution, $major, $awards, $working_years, $job_status, $salary_type, $salary, $jobs, $cpp_ability, $py_ability, $java_ability, $cs_ability, $git_ability, $latax_ability, $statement, $last_updated);
 $sql_stmt->execute();
 $sql_stmt->fetch();
 $sql_stmt->close();
 
-// 断开数据库连接
 $conn->close();
 
 if (!$name) {
-    echo "<script>alert('请先填写简历内容！');window.location.href='resume-edit.php';</script>";
+    echo "<script>alert('Please refine the resume first!');window.location.href='resume-edit.php';</script>";
     exit();
 }
 
-// 解析 json 字符串
 $awards = $awards ? json_decode($awards, true) : false;
 $jobs = $jobs ? json_decode($jobs, true) : false;
 
-// 格式化时间
 $birthdate = date('Y-m-d', strtotime($birthdate));
 ?>
 
@@ -45,13 +39,13 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>简历预览 - <?php echo $name; ?></title>
-    <link rel="shortcut icon" href="./static/assets/favicon.ico">
+    <title>Preview Resume - <?php echo $name; ?></title>
+    <link rel="shortcut icon" href="static/assets/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./static/css/background.css">
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/resume.css">
-    <link rel="stylesheet" href="./static/css/chart.css">
+    <link rel="stylesheet" href="static/css/background.css">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/resume.css">
+    <link rel="stylesheet" href="static/css/chart.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.transit@0.9.12/jquery.transit.min.js"></script>
 </head>
@@ -60,8 +54,8 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
     <section class="hero is-info">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title"><?php echo $name; ?>的简历</h1>
-                <h3 class="subtitle is-7">最后修改时间：<?php echo $last_modified; ?></h3>
+                <h1 class="title"><?php echo $name; ?>'s Resume</h1>
+                <h3 class="subtitle is-7">Last updated: <?php echo $last_updated; ?></h3>
             </div>
         </div>
     </section>
@@ -71,12 +65,12 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
             <div class="columns is-rtl">
                 <div class="column is-3 is-middle is-ltr">
                     <img id="avatar" class="avatar" <?php
-if ($avatarUrl) {
-    echo 'src="./static/assets/transparent.png"';
-    echo 'style="background-image: url(' . $avatarUrl . ');"';
-} else {
-    echo 'src="./static/assets/' . ($sex == 'male' ? 'male.png"' : 'female.png"');
-} ?>>
+                        if ($avatar) {
+                            echo 'src="static/assets/transparent.png"';
+                            echo 'style="background-image: url(' . $avatar . ');"';
+                        } else {
+                            echo 'src="static/assets/' . ($gender == 'male' ? 'male.png"' : 'female.png"');
+                        } ?>>
                 </div>
 
                 <div class="column is-4 is-preview is-middle is-ltr">
@@ -113,7 +107,7 @@ if ($avatarUrl) {
 
                 <div class="column is-5 is-ltr">
                     <div class="field">
-                        <label class="label">用户名</label>
+                        <label class="label">Username</label>
                         <div class="control has-indent">
                             <input class="input is-static is-grey" type="text" value="<?php echo $_SESSION['username']; ?>" readonly>
                         </div>
@@ -121,30 +115,30 @@ if ($avatarUrl) {
 
                     <div class="columns">
                         <div class="column is-three-fifths">
-                            <label class="label">姓名</label>
+                            <label class="label">Name</label>
                             <div class="control">
                                 <input class="input is-static" type="text" value="<?php echo $name; ?>" readonly>
                             </div>
                         </div>
                         <div class="column is-two-fifth">
-                            <label class="label">性别</label>
+                            <label class="label">Gender</label>
                             <div class="control">
-                                <input class="input is-static" type="text" value="<?php echo $sex == 'male' ? '男' : '女'; ?>" readonly>
+                                <input class="input is-static" type="text" value="<?php echo $gender == 'male' ? 'Male' : 'Female'; ?>" readonly>
                             </div>
                         </div>
                     </div>
 
                     <div class="columns">
                         <div class="column is-three-fifths">
-                            <label class="label">出生日期</label>
+                            <label class="label">Date of Birth</label>
                             <div class="control">
                                 <input class="input is-static" type="date" value="<?php echo $birthdate; ?>" readonly>
                             </div>
                         </div>
                         <div class="column is-two-fifth">
-                            <label class="label">籍贯</label>
+                            <label class="label">Hometown</label>
                             <div class="control">
-                                <input class="input is-static" type="text" value="<?php echo $birthplace; ?>" readonly>
+                                <input class="input is-static" type="text" value="<?php echo $hometown; ?>" readonly>
                             </div>
                         </div>
                     </div>
@@ -155,7 +149,7 @@ if ($avatarUrl) {
 
             <div class="columns">
                 <div class="column is-half">
-                    <label class="label">手机号码</label>
+                    <label class="label">Cellphone</label>
                     <div class="control">
                         <input class="input is-static" type="tel" value="<?php echo $cellphone; ?>" readonly>
                     </div>
@@ -171,14 +165,14 @@ if ($avatarUrl) {
 
             <div class="columns">
                 <div class="column is-half">
-                    <label class="label">户口</label>
+                    <label class="label">Residence</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php echo $residence; ?>" readonly>
                     </div>
                 </div>
 
                 <div class="column is-half">
-                    <label class="label">居住地</label>
+                    <label class="label">Address</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php echo $address; ?>" readonly>
                     </div>
@@ -189,121 +183,121 @@ if ($avatarUrl) {
 
             <div class="columns">
                 <div class="column is-2">
-                    <label class="label">学历</label>
+                    <label class="label">Academic Background</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
-switch ($degree) {
-    case 1:
-        echo '高中及以下';
-        break;
-    case 2:
-        echo '专科';
-        break;
-    case 3:
-        echo '本科';
-        break;
-    case 4:
-        echo '硕士';
-        break;
-    case 5:
-        echo '博士';
-        break;
-    default:
-        echo '未知';
-} ?>" readonly>
+                            switch ($degree) {
+                                case 1:
+                                    echo 'High School Degree';
+                                    break;
+                                case 2:
+                                    echo 'College Degree';
+                                    break;
+                                case 3:
+                                    echo 'Bachelor\'s Degree';
+                                    break;
+                                case 4:
+                                    echo 'Master\'s Degree';
+                                    break;
+                                case 5:
+                                    echo 'Docteral Degree';
+                                    break;
+                                default:
+                                    echo 'Unknown';
+                            } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="column is-5">
-                    <label class="label">毕业院校</label>
+                    <label class="label">Institution</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php echo $institution; ?>" readonly>
                     </div>
                 </div>
 
                 <div class="column is-5">
-                    <label class="label">专业</label>
+                    <label class="label">Major</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php echo $major; ?>" readonly>
                     </div>
                 </div>
             </div>
 
-<?php if (!empty($awards)) {
-    include './php/awards-preview.php';
-    appendAwards($awards);
-} ?>
+            <?php if (!empty($awards)) {
+                include 'php/awards-preview.php';
+                appendAwards($awards);
+            } ?>
 
             <div class="columns">
                 <div class="column is-2">
-                    <label class="label">工作年限</label>
+                    <label class="label">Years of Working</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
-switch ($working_years) {
-    case 1:
-        echo '一年及以内';
-        break;
-    case 2:
-        echo '一至三年';
-        break;
-    case 3:
-        echo '三至五年';
-        break;
-    case 4:
-        echo '五至十年';
-        break;
-    case 5:
-        echo '十年及以上';
-        break;
-    default:
-        echo '未知';
-} ?>" readonly>
+                            switch ($working_years) {
+                                case 1:
+                                    echo 'Less than 1 year';
+                                    break;
+                                case 2:
+                                    echo '1 ~ 3 years';
+                                    break;
+                                case 3:
+                                    echo '3 ~ 5 years';
+                                    break;
+                                case 4:
+                                    echo '5 ~ 10 years';
+                                    break;
+                                case 5:
+                                    echo 'More than 10 years';
+                                    break;
+                                default:
+                                    echo 'Unknown';
+                            } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="column is-5">
-                    <label class="label">求职状态</label>
+                    <label class="label">Job Status</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php echo $job_status; ?>" readonly>
                     </div>
                 </div>
 
                 <div class="column is-5">
-                    <label class="label">期望薪资</label>
+                    <label class="label">Expected Salary</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
-switch ($salary_type) {
-    case 0:
-        echo '年薪 ';
-        break;
-    case 1:
-        echo '月薪 ';
-        break;
-    case 2:
-        echo '周薪 ';
-        break;
-    case 3:
-        echo '日薪 ';
-        break;
-    default:
-        echo '未知';
-        return;
-}
-echo $salary;
-echo ' 元人民币'; ?>" readonly>
+                            switch ($salary_type) {
+                                case 0:
+                                    echo 'Annual ';
+                                    break;
+                                case 1:
+                                    echo 'Monthly ';
+                                    break;
+                                case 2:
+                                    echo 'Weekly ';
+                                    break;
+                                case 3:
+                                    echo 'Daily ';
+                                    break;
+                                default:
+                                    echo 'Unknown';
+                                    return;
+                            }
+                            echo $salary;
+                            echo ' Dollars'; ?>" readonly>
                     </div>
                 </div>
             </div>
 
-<?php if (!empty($jobs)) {
-    include './php/jobs-preview.php';
-    appendJobs($jobs);
-} ?>
+            <?php if (!empty($jobs)) {
+                include 'php/jobs-preview.php';
+                appendJobs($jobs);
+            } ?>
 
             <div class="line"></div>
 
             <div class="field">
-                <label class="label">计算机能力<label>
+                <label class="label">Computer Skills<label>
             </div>
 
             <div class="columns">
@@ -355,7 +349,7 @@ echo ' 元人民币'; ?>" readonly>
             </div>
 
             <div class="field">
-                <label class="label">个人陈述</label>
+                <label class="label">Personal Statement</label>
                 <div class="control">
                     <textarea id="statement-preview" class="input is-static is-dark-grey" readonly><?php echo $statement ? $statement : '无'; ?></textarea>
                 </div>
@@ -363,18 +357,18 @@ echo ' 元人民币'; ?>" readonly>
 
             <div class="field is-grouped is-gap">
                 <div class="control">
-                    <button class="button is-primary" onclick="onEditClick()">编辑</button>
+                    <button class="button is-primary" onclick="onEditClick()">Edit</button>
                 </div>
                 <div class="control">
-                    <button class="button is-light" onclick="onLogoutClick()">退出</button>
+                    <button class="button is-light" onclick="onLogoutClick()">Exit</button>
                 </div>
             </div>
         </form>
     </section>
 </body>
 
-<script src="./static/lib/background.js"></script>
-<script src="./static/lib/resume.js"></script>
-<script src="./static/lib/template.js"></script>
+<script src="static/lib/background.js"></script>
+<script src="static/lib/resume.js"></script>
+<script src="static/lib/template.js"></script>
 
 </html>

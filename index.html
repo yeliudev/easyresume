@@ -6,33 +6,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>登录 - 在线简历管理系统</title>
-    <link rel="shortcut icon" href="./static/assets/favicon.ico">
-    <link rel="stylesheet" href="./static/css/background.css">
-    <link rel="stylesheet" href="./static/css/index.css">
+    <title>EasyResume - An Online Resume Management System</title>
+    <link rel="shortcut icon" href="static/assets/favicon.ico">
+    <link rel="stylesheet" href="static/css/background.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.transit@0.9.12/jquery.transit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-    <script src="./static/lib/verification.js"></script>
+    <script src="static/lib/verification.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="welcome">欢迎</h1>
+        <h1 class="welcome">Welcome</h1>
         <form class="form" method="POST">
-            <input id="username" name="username" type="text" placeholder="用户名" data-valid="20 isNotEmpty isUsername">
-            <input id="password" name="password" type="password" placeholder="密码" data-valid="16 isNotEmpty isPassword">
+            <input id="username" name="username" type="text" placeholder="Username" data-valid="20 isNotEmpty isUsername">
+            <input id="password" name="password" type="password" placeholder="Password" data-valid="16 isNotEmpty isPassword">
             <label class="error-label is-invisible"></label>
-            <button class="login-button">登录</button>
-            <button class="register-button">注册</button>
+            <button class="login-button">Sign In</button>
+            <button class="register-button">Sign Up</button>
         </form>
     </div>
     <div class="statement">
-        <p>Copyright ©️ Ye Liu 2020. All rights reserved.</p>
+        <p>Copyright ©️ Ye Liu 2021. All rights reserved.</p>
     </div>
 </body>
 
-<script src="./static/lib/background.js"></script>
-<script src="./static/lib/index.js"></script>
+<script src="static/lib/background.js"></script>
+<script src="static/lib/index.js"></script>
 
 </html>

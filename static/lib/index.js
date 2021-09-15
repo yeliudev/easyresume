@@ -3,10 +3,9 @@
 'use strict'
 
 function submit() {
-    // 输入合法性校验
     for (var i = 0; i < $('input').length; i++) {
         if (!verify($('input')[i].id)) {
-            $('.error-label').html('用户名或密码不合法')
+            $('.error-label').html('Invalid username or password')
             $('form').fadeIn(500)
             $('.error-label').removeClass('is-invisible')
             $('.login-button').removeClass('is-register')
@@ -17,7 +16,7 @@ function submit() {
 
     $.ajax({
         type: 'POST',
-        url: $('.login-button').html() == '登录' ? 'login.php' : 'register.php',
+        url: $('.login-button').html() == 'Sign Up' ? 'login.php' : 'register.php',
         data: {
             username: $('input[name="username"]').val(),
             password: md5($('input[name="password"]').val())
@@ -36,7 +35,7 @@ function submit() {
             }
         },
         error: function () {
-            $('.error-label').html('连接丢失，请稍后重试')
+            $('.error-label').html('Connection lost')
             $('form').fadeIn(500)
             $('.error-label').removeClass('is-invisible')
             $('.login-button').removeClass('is-register')
@@ -55,6 +54,6 @@ $('.login-button').click(function (e) {
 $('.register-button').click(function (e) {
     e.preventDefault()
     $(this).fadeOut(500)
-    $('.login-button').text('注册')
+    $('.login-button').text('Sign Up')
     $('.login-button').addClass('is-register')
 })

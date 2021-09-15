@@ -18,7 +18,8 @@ input {
     outline: none;
 }
 
-input[type=range], progress {
+input[type=range],
+progress {
     -moz-appearance: none;
     -webkit-appearance: none;
     border: none;
