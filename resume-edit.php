@@ -158,7 +158,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
                                 <span class="icon is-small is-left">
                                     <i class="fa fa-address-book-o"></i>
                                 </span>
-                                <p id="hometown-warning" class="help is-danger">Invalid place of birth</p>
+                                <p id="hometown-warning" class="help is-danger">Invalid hometown</p>
                             </div>
                         </div>
                     </div>
@@ -217,15 +217,15 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
 
             <div class="columns">
                 <div class="column is-2">
-                    <label class="label">Academic Background</label>
+                    <label class="label">Degree</label>
                     <div class="select">
                         <select name="degree" onchange="onVarify(this, false, true)">
-                            <option value="0" <?php if ($degree == '0') {echo 'selected';} ?>>Please select</option>
-                            <option value="1" <?php if ($degree == '1') {echo 'selected';} ?>>High School Degree</option>
-                            <option value="2" <?php if ($degree == '2') {echo 'selected';} ?>>College Degree</option>
-                            <option value="3" <?php if ($degree == '3') {echo 'selected';} ?>>Bachelor's Degree</option>
-                            <option value="4" <?php if ($degree == '4') {echo 'selected';} ?>>Master's Degree</option>
-                            <option value="5" <?php if ($degree == '5') {echo 'selected';} ?>>Docteral Degree</option>
+                            <option value="0" <?php if ($degree == '0') {echo 'selected';} ?>>Select</option>
+                            <option value="1" <?php if ($degree == '1') {echo 'selected';} ?>>High School</option>
+                            <option value="2" <?php if ($degree == '2') {echo 'selected';} ?>>College</option>
+                            <option value="3" <?php if ($degree == '3') {echo 'selected';} ?>>Bachelor</option>
+                            <option value="4" <?php if ($degree == '4') {echo 'selected';} ?>>Master</option>
+                            <option value="5" <?php if ($degree == '5') {echo 'selected';} ?>>Doctor</option>
                         </select>
                     </div>
                     <p id="degree-warning" class="help is-danger">Please select your degree</p>
@@ -266,15 +266,15 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
 
             <div id="after-award-table" class="columns">
                 <div class="column is-2">
-                    <label class="label">Years of Working</label>
+                    <label class="label">Work Experience</label>
                     <div class="select">
                         <select name="working-years" onchange="onVarify(this, false, true)">
-                            <option value="0" <?php if ($working_years == '0') {echo 'selected';} ?>>Please select</option>
-                            <option value="1" <?php if ($working_years == '1') {echo 'selected';} ?>>Less than 1 year</option>
+                            <option value="0" <?php if ($working_years == '0') {echo 'selected';} ?>>Select</option>
+                            <option value="1" <?php if ($working_years == '1') {echo 'selected';} ?>>< 1 year</option>
                             <option value="2" <?php if ($working_years == '2') {echo 'selected';} ?>>1 ~ 3 years</option>
                             <option value="3" <?php if ($working_years == '3') {echo 'selected';} ?>>3 ~ 5 years</option>
                             <option value="4" <?php if ($working_years == '4') {echo 'selected';} ?>>5 ~ 10 years</option>
-                            <option value="5" <?php if ($working_years == '5') {echo 'selected';} ?>>More than 10 years</option>
+                            <option value="5" <?php if ($working_years == '5') {echo 'selected';} ?>>> 10 years</option>
                         </select>
                     </div>
                     <p id="working-years-warning" class="help is-danger">Please select the years of working</p>
@@ -313,7 +313,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
                 </div>
 
                 <div class="column is-2">
-                    <label class="label">Work Experience</label>
+                    <label class="label">Companies</label>
                     <a id="add-job-btn" class="button is-primary" onclick="onAddJobClick()">Add</a>
                 </div>
             </div>

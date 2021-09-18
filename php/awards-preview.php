@@ -1,7 +1,7 @@
 <?php
 function appendAwards($awards)
 {
-    $levelMap = array('0' => 'Collegewide', '1' => 'Citywide', '2' => 'Statewide', '3' => 'Nationwide', '4' => 'Worldwide');
+    $levelMap = array('0' => 'College', '1' => 'City', '2' => 'State', '3' => 'Nation', '4' => 'World');
 
     echo '<div class="field">';
     echo '<label class="label">Awards</label>';

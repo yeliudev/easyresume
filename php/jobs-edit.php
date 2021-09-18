@@ -18,7 +18,7 @@ function appendJobs($jobs)
         echo '<input class="input" type="text" name="job-to-time" placeholder="Year" data-valid="4 isNotEmpty isNum" value="' . $item['to'] . '" onblur="onVarify(this, true)">';
         echo '</p>';
         echo '</div>';
-        echo '<p name="job-time-warning" class="help is-danger is-align-top">Invalid job period</p>';
+        echo '<p name="job-time-warning" class="help is-danger">Invalid job period</p>';
         echo '</div>';
         echo '</div>';
 

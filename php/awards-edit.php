@@ -15,11 +15,11 @@ function appendAwards($awards)
         echo '<div class="column is-2">';
         echo '<div class="select">';
         echo '<select name="award-level">';
-        echo $item['level'] == '0' ? '<option value="0" selected>Collegewide</option>' : '<option value="0">Collegewide</option>';
-        echo $item['level'] == '1' ? '<option value="1" selected>Citywide</option>' : '<option value="1">Citywide</option>';
-        echo $item['level'] == '2' ? '<option value="2" selected>Statewide</option>' : '<option value="2">Statewide</option>';
-        echo $item['level'] == '3' ? '<option value="3" selected>Nationwide</option>' : '<option value="3">Nationwide</option>';
-        echo $item['level'] == '4' ? '<option value="4" selected>Worldwide</option>' : '<option value="4">Worldwide</option>';
+        echo $item['level'] == '0' ? '<option value="0" selected>College</option>' : '<option value="0">College</option>';
+        echo $item['level'] == '1' ? '<option value="1" selected>City</option>' : '<option value="1">City</option>';
+        echo $item['level'] == '2' ? '<option value="2" selected>State</option>' : '<option value="2">State</option>';
+        echo $item['level'] == '3' ? '<option value="3" selected>Nation</option>' : '<option value="3">Nation</option>';
+        echo $item['level'] == '4' ? '<option value="4" selected>World</option>' : '<option value="4">World</option>';
         echo '</select>';
         echo '</div>';
         echo '</div>';

@@ -183,24 +183,24 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
 
             <div class="columns">
                 <div class="column is-2">
-                    <label class="label">Academic Background</label>
+                    <label class="label">Degree</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
                             switch ($degree) {
                                 case 1:
-                                    echo 'High School Degree';
+                                    echo 'High School';
                                     break;
                                 case 2:
-                                    echo 'College Degree';
+                                    echo 'College';
                                     break;
                                 case 3:
-                                    echo 'Bachelor\'s Degree';
+                                    echo 'Bachelor';
                                     break;
                                 case 4:
-                                    echo 'Master\'s Degree';
+                                    echo 'Master';
                                     break;
                                 case 5:
-                                    echo 'Docteral Degree';
+                                    echo 'Doctor';
                                     break;
                                 default:
                                     echo 'Unknown';
@@ -230,12 +230,12 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
 
             <div class="columns">
                 <div class="column is-2">
-                    <label class="label">Years of Working</label>
+                    <label class="label">Work Experience</label>
                     <div class="control">
                         <input class="input is-static" type="text" value="<?php
                             switch ($working_years) {
                                 case 1:
-                                    echo 'Less than 1 year';
+                                    echo '< 1 year';
                                     break;
                                 case 2:
                                     echo '1 ~ 3 years';
@@ -247,7 +247,7 @@ $birthdate = date('Y-m-d', strtotime($birthdate));
                                     echo '5 ~ 10 years';
                                     break;
                                 case 5:
-                                    echo 'More than 10 years';
+                                    echo '> 10 years';
                                     break;
                                 default:
                                     echo 'Unknown';

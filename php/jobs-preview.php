@@ -2,7 +2,7 @@
 function appendJobs($jobs)
 {
     echo '<div class="field">';
-    echo '<label class="label">Work Experience</label>';
+    echo '<label class="label">Companies</label>';
     echo '<div class="control">';
     echo '<div class="columns">';
     echo '<div class="column is-10 is-offset-1">';

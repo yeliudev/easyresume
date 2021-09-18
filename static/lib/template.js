@@ -15,11 +15,11 @@ var awardTableTemplate = '<div id="award-table" class="column is-10 is-offset-1 
                         <div class="column is-2">\
                             <div class="select">\
                                 <select name="award-level">\
-                                    <option value="0">Collegewide</option>\
-                                    <option value="1">Citywide</option>\
-                                    <option value="2">Statewide</option>\
-                                    <option value="3">Nationwide</option>\
-                                    <option value="4">Worldwide</option>\
+                                    <option value="0">College</option>\
+                                    <option value="1">City</option>\
+                                    <option value="2">State</option>\
+                                    <option value="3">Nation</option>\
+                                    <option value="4">World</option>\
                                 </select>\
                             </div>\
                         </div>\
@@ -52,7 +52,7 @@ var awardTableTemplate = '<div id="award-table" class="column is-10 is-offset-1 
                                         <input class="input" type="text" name="job-to-time" placeholder="Year" data-valid="4 isNotEmpty isNum" onblur="onVarify(this, true)">\
                                     </p>\
                                 </div>\
-                                <p name="job-time-warning" class="help is-danger is-align-top">Invalid job period</p>\
+                                <p name="job-time-warning" class="help is-danger">Invalid job period</p>\
                             </div>\
                         </div>\
                         \

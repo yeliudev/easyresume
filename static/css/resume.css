@@ -137,7 +137,7 @@ input[type=range]::-ms-thumb {
 
 .is-align-top {
     position: relative;
-    top: -7px;
+    top: -12px;
 }
 
 .is-align-center {
