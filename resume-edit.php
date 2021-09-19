@@ -34,7 +34,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Resume<?php echo $name ? ' - ' . $name : ''; ?></title>
+    <title>Edit Resume - <?php echo $name ? $name : $_SESSION['username']; ?></title>
     <link rel="shortcut icon" href="static/assets/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/css/background.css">

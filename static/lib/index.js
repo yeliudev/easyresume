@@ -16,7 +16,7 @@ function submit() {
 
     $.ajax({
         type: 'POST',
-        url: $('.login-button').html() == 'Sign Up' ? 'login.php' : 'register.php',
+        url: $('.login-button').html() == 'Sign In' ? 'login.php' : 'register.php',
         data: {
             username: $('input[name="username"]').val(),
             password: md5($('input[name="password"]').val())
