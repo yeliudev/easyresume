@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">EasyResume</h1>
-<p align="center">An online resume management system made with PHP.</p>
+<p align="center">A cross-platform and responsive online resume management system.</p>
 
 <p align="center">
   <img width="650" src=".github/screenshot1.png" alt="screenshot1">
