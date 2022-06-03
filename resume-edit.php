@@ -408,7 +408,7 @@ $birthdate = strtotime($birthdate) ? date('Y-m-d', strtotime($birthdate)) : '';
         <div class="message-body">Saved successfully</div>
     </article>
 
-    <article id="messgae-error" class="message is-danger is-bottom-right">
+    <article id="message-error" class="message is-danger is-bottom-right">
         <div class="message-header">
             <p>Notice</p>
             <button class="delete" onclick="onCloseError()"></button>
